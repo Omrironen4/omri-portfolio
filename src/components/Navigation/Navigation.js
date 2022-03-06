@@ -80,7 +80,7 @@ const Navigation = () => {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link style={{ textDecoration: 'none', color: 'white'}} to={`/${page}`}>{page}</Link>
+                    <Link style={{ textDecoration: 'none', color: 'black'}} to={`/${page}`}>{page}</Link>
                   </Typography>
                 </MenuItem>
               ))}
