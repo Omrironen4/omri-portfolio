@@ -8,6 +8,8 @@
 }
 
 .particles {
+  background-image: url('./Images/kauai.jpg');
+  background-size: cover;
   position: fixed;
   top:0;
   right:0;

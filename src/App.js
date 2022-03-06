@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 import Particles from 'react-tsparticles';
 import Navigation from './components/Navigation/Navigation';
 import Home from './components/Home/Home';
 import Aboutme from './components/Aboutme/Aboutme';
 import MyWork from './components/MyWork/MyWork';
 import Contact from './components/Contact/Contact';
- 
-
-
-
 
 
 const particlesOptions = {
@@ -108,21 +104,19 @@ class App extends Component {
     return (
 
       <div className="App">   
+        <Navigation />
+        <Routes>
+          <Route path='/Home' element={<Home />} />
+          <Route path='Aboutme' element={ <Aboutme />} />
+          <Route path='MyWork' element={ <MyWork />} />
+          <Route path='Contact' element={ <Contact />} />
+        </Routes>
         <Particles className='particles'
           id="tsparticles"
           // init={particlesInit}
           // loaded={particlesLoaded}
           options={particlesOptions}
         />
-        <Navigation />
-        <Routes>
-          <Route path='/Home' element={ <Home />} />
-          <Route path='Aboutme' element={ <Aboutme />} />
-          <Route path='MyWork' element={ <MyWork />} />
-          <Route path='Contact' element={ <Contact />} />
-
-        </Routes>
-
       </div>
     )
   }
