@@ -85,7 +85,7 @@ const particlesOptions = {
 const Home = () => {
     return (
         <div>
-            <h1 style={{fontFamily:"'sacramento', cursive", fontSize: '2.5em', color:''}}>Welcome to my portfolio</h1>
+            <h1 style={{fontFamily:"'sacramento', cursive", fontSize: '2.5em', color:'#FFF8DC', fontWeight:'100'}}>Welcome to my portfolio</h1>
             <Particles className='particles'
                 id="tsparticles"
                 // init={particlesInit}
