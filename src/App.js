@@ -95,13 +95,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      hamburger: false
+      
     }
   }
 
-  onHamburgerClick = () => {
-    console.log('click')
-  }
 
   render(props) {
     return (
@@ -122,10 +119,6 @@ class App extends Component {
           // loaded={particlesLoaded}
           options={particlesOptions}
         />
-        <Navigation />
-        <Hamburger />
-
-
       </div>
     )
   }
