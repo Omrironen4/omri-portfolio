@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
-import Hamburger from './components/Hamburger/Hamburger';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Particles from 'react-tsparticles';
-import Home from './components/Home/Home'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation/Navigation';
+import Home from './components/Home/Home';
+import Aboutme from './components/Aboutme/Aboutme';
+import MyWork from './components/MyWork/MyWork';
+import Contact from './components/Contact/Contact';
+ 
+
 
 
 
@@ -103,22 +107,22 @@ class App extends Component {
   render(props) {
     return (
 
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route />
-            <Route exact path='/' element={props = <Navigation {...props} />} />
-            <Route />
-            <Route />
-          </Routes>
-        </Router>
-
+      <div className="App">   
         <Particles className='particles'
           id="tsparticles"
           // init={particlesInit}
           // loaded={particlesLoaded}
           options={particlesOptions}
         />
+        <Navigation />
+        <Routes>
+          <Route path='/Home' element={ <Home />} />
+          <Route path='Aboutme' element={ <Aboutme />} />
+          <Route path='MyWork' element={ <MyWork />} />
+          <Route path='Contact' element={ <Contact />} />
+
+        </Routes>
+
       </div>
     )
   }
