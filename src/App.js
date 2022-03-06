@@ -3,6 +3,9 @@ import './App.css';
 import Navigation from './components/Navigation/Navigation';
 import Hamburger from './components/Hamburger/Hamburger';
 import Particles from 'react-tsparticles';
+import Home from './components/Home/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 
 
@@ -100,18 +103,30 @@ class App extends Component {
     console.log('click')
   }
 
-  render() {
+  render(props) {
     return (
+
       <div className="App">
-      <Particles className='particles'
-        id="tsparticles"
-        // init={particlesInit}
-        // loaded={particlesLoaded}
-        options={particlesOptions}
-      />
-      <Navigation />
-      <Hamburger />
-    </div>
+        <Router>
+          <Routes>
+            <Route />
+            <Route exact path='/' element={props = <Navigation {...props} />} />
+            <Route />
+            <Route />
+          </Routes>
+        </Router>
+
+        <Particles className='particles'
+          id="tsparticles"
+          // init={particlesInit}
+          // loaded={particlesLoaded}
+          options={particlesOptions}
+        />
+        <Navigation />
+        <Hamburger />
+
+
+      </div>
     )
   }
 
