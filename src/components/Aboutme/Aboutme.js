@@ -1,11 +1,21 @@
 import React from 'react';
+import Particles from 'react-tsparticles';
+import ParticlesLegend from '../ParticlesLegend/ParticlesLegend';
 import headshot from '../../Assets/HeadShot.jpg';
-import islands from '../../Assets/islands.jpg';
+
 
 const Aboutme = () => {
-    return(
-        <div style={{}}>
-             <img style={{width:'10em', height:'auto', borderRadius: '30px'}} className="headshot" alt="" src={headshot}></img>
+    return (
+
+        <div>
+            <img style={{ width: '10em', height: 'auto', borderRadius: '30px' }} className="headshot" alt="" src={headshot}></img>
+            <h1 style={{ fontFamily: "'sacramento', cursive", fontSize: '2.5em', color: '#FFF8DC', fontWeight: '100' }}>About me</h1>
+            <Particles className='particles'
+                id="tsparticles"
+                // init={particlesInit}
+                // loaded={particlesLoaded}
+                options={ParticlesLegend}
+            />
         </div>
     )
 }
