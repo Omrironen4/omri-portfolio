@@ -5,7 +5,7 @@ import islands from '../../Assets/islands.jpg';
 const Aboutme = () => {
     return(
         <div style={{}}>
-             <img style={{width:'10em', height:'auto'}} className="headshot" alt="" src={headshot}></img>
+             <img style={{width:'10em', height:'auto', borderRadius: '30px'}} className="headshot" alt="" src={headshot}></img>
         </div>
     )
 }
