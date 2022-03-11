@@ -111,7 +111,8 @@ class App extends Component {
 
         <Navigation />
         <Routes>
-          <Route path='/Home' element={<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path='Home' element={<Home />} />
           <Route path='Aboutme' element={<Aboutme />} />
           <Route path='MyWork' element={<MyWork />} />
           <Route path='Contact' element={<Contact />} />
