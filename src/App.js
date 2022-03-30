@@ -107,8 +107,6 @@ class App extends Component {
           // loaded={particlesLoaded}
           options={particlesOptions}
         /> */}
-
-
         <Navigation />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -117,7 +115,6 @@ class App extends Component {
           <Route path='MyWork' element={<MyWork />} />
           <Route path='Contact' element={<Contact />} />
         </Routes>
-
       </div>
     )
   }

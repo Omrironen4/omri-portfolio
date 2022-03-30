@@ -1,79 +1,79 @@
 const ParticlesLegend = {
     background: {
         color: {
-            value: "none",
+          value: "none",
         },
-    },
-    fpsLimit: 120,
-    interactivity: {
+      },
+      fpsLimit: 120,
+      interactivity: {
         events: {
-            onClick: {
-                enable: true,
-                mode: "grab",
-            },
-            onHover: {
-                enable: true,
-                mode: "grab",
-            },
-            resize: false,
+          onClick: {
+            enable: true,
+            mode: "push",
+          },
+          onHover: {
+            enable: false,
+            mode: "repulse",
+          },
+          resize: true,
         },
         modes: {
-            bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40,
-            },
-            push: {
-                quantity: 4,
-            },
-            repulse: {
-                distance: 140,
-                duration: 0.4,
-            },
+          bubble: {
+            distance: 400,
+            duration: 2,
+            opacity: 0.8,
+            size: 40,
+          },
+          push: {
+            quantity: 4,
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
         },
-    },
-    particles: {
+      },
+      particles: {
         color: {
-            value: "#",
+          value: "#ffffff",
         },
         links: {
-            color: "#FFF8DC",
-            distance: 90,
-            enable: true,
-            opacity: .5,
-            width: .8,
+          color: "#ffffff",
+          distance: 150,
+          enable: true,
+          opacity: 0.5,
+          width: 1,
         },
         collisions: {
-            enable: false,
+          enable: true,
         },
         move: {
-            direction: "none",
-            enable: true,
-            outMode: "bounce",
-            random: false,
-            speed: .8,
-            straight: false,
+          direction: "none",
+          enable: true,
+          outMode: "bounce",
+          random: false,
+          speed: 1,
+          straight: false,
         },
         number: {
-            density: {
-                enable: true,
-                area: 700,
-            },
-            value: 50,
+          density: {
+            enable: true,
+            area: 800,
+          },
+          value: 50,
         },
         opacity: {
-            value: 0.5,
+          value: 0.5,
         },
         shape: {
-            type: "circle",
+          type: "circle",
         },
         size: {
-            random: true,
-            value: 5,
+          random: true,
+          value: 5,
         },
-    },
-    detectRetina: true,
+      },
+      detectRetina: true,
 
 }
 
