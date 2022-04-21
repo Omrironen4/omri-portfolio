@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import { Breadcrumbs } from '@mui/material';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -23,7 +24,7 @@ import { Link } from 'react-router-dom';
 //   }
 // })
 
-const pages = ['Home', 'Aboutme', 'Contact', 'MyWork'];
+const pages = ['Home', 'Aboutme', 'Contact', 'My Work'];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navigation = () => {
@@ -47,64 +48,66 @@ const Navigation = () => {
   // #FFF8DC
   return (
     // <ThemeProvider theme={theme}>
-      <AppBar position="static" sx={{ background:'#01426A', opacity:'0.7'}} >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                style={{color:"black"}}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">
-                      <Link  sx={{ textDecoration: 'none', color:'black' }} to={`/${page}`}>{page}</Link>
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-           
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  <Link style={{ textDecoration: 'none', color: 'black' }} to={`/${page}`}>{page}</Link>
-                </Button>
-              ))}
-            </Box>
+    <AppBar position="static" sx={{ background: '#01426A', opacity: '0.7' }} >
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
 
-          </Toolbar>
-        </Container>
-      </AppBar>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              style={{ color: "black" }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Breadcrumbs aria-label="breadcrumb">
+                    <Typography textAlign="center">
+                      <Link sx={{ textDecoration: 'none', color: 'primary', underline: "hover" }}  to={`/${page}`}>{page}</Link>
+                    </Typography>
+                  </Breadcrumbs>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                <Link style={{ textDecoration: 'none', color: 'black' }} to={`/${page}`}>{page}</Link>
+              </Button>
+            ))}
+          </Box>
+
+        </Toolbar>
+      </Container>
+    </AppBar>
     // </ThemeProvider>
   );
 };
